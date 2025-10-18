@@ -1,0 +1,36 @@
+/* Reset & body */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
+body { background: linear-gradient(120deg, #0a0a0a, #1a0a1a, #0a0a0a); background-size:400% 400%; animation: gradientShift 15s ease infinite; color:#f0f0f0; line-height:1.6; }
+
+@keyframes gradientShift {
+    0% {background-position:0% 50%;} 50% {background-position:100% 50%;} 100% {background-position:0% 50%;}
+}
+
+/* Header */
+header { background: linear-gradient(90deg, #6a0dad, #ff0040); padding:25px; text-align:center; box-shadow:0 6px 10px rgba(0,0,0,0.6); animation: pulseHeader 3s infinite; }
+@keyframes pulseHeader { 0%,100% {box-shadow:0 6px 10px rgba(0,0,0,0.6);} 50% {box-shadow:0 6px 20px rgba(255,0,64,0.8);} }
+header h1 { font-size:3em; color:#fff; text-shadow:3px 3px #000; animation: glowText 2s ease-in-out infinite alternate; }
+@keyframes glowText { 0% {text-shadow:2px 2px #000;} 100% {text-shadow:2px 2px #ff0040, 0 0 10px #ff0040, 0 0 20px #6a0dad;} }
+nav ul { list-style:none; display:flex; justify-content:center; gap:30px; margin-top:10px; }
+nav a { color:#fff; text-decoration:none; font-weight:bold; transition: all 0.3s; }
+nav a:hover { color:#ff0040; transform:scale(1.1); }
+
+/* Sections & animations */
+section { padding:50px 20px; text-align:center; opacity:0; transform:translateY(20px); animation: fadeInUp 1s forwards; animation-delay:0.5s; }
+section:nth-child(even){ background-color:#1a1a1a; }
+@keyframes fadeInUp { to {opacity:1; transform:translateY(0);} }
+
+h2 { font-size:2em; margin-bottom:20px; color:#ff0040; text-shadow:1px 1px #000; }
+
+/* Blog posts */
+.blog-post { background:#1a0a1a; padding:20px; margin:20px auto; max-width:700px; border-left:5px solid #ff0040; border-radius:6px; transition: transform 0.3s; }
+.blog-post:hover { transform: translateY(-5px); }
+.blog-post h3 { color:#6a0dad; margin-bottom:10px; }
+.blog-post .full-text { display:none; }
+
+/* Buttons */
+button { padding:12px 25px; font-size:1.1em; background:linear-gradient(90deg,#6a0dad,#ff0040); color:#fff; border:none; cursor:pointer; border-radius:8px; transition: all 0.3s; }
+button:hover { background:linear-gradient(90deg,#ff0040,#6a0dad); transform:scale(1.1) rotate(2deg); box-shadow:0 0 15px #ff0040; }
+
+/* Footer */
+footer { background-color:#0a0a0a; text-align:center; padding:20px; border-top:2px solid #6a0dad; color:#888; }
